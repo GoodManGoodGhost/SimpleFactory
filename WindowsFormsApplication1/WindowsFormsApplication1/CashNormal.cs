@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApplication1
 {
-    class CashNormal:CashSuper
+    class CashNormal : CashSuper
     {
         /// <summary>
         /// 正常收费，返回原价

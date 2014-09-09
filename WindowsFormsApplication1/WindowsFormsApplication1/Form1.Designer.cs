@@ -38,6 +38,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.labTotalPrice = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -54,9 +56,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(37, 53);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 12);
+            this.label2.Size = new System.Drawing.Size(41, 12);
             this.label2.TabIndex = 1;
-            this.label2.Text = "数量";
+            this.label2.Text = "数量：";
             // 
             // textPrice
             // 
@@ -96,9 +98,9 @@
             // 
             this.ltbList.FormattingEnabled = true;
             this.ltbList.ItemHeight = 12;
-            this.ltbList.Location = new System.Drawing.Point(39, 99);
+            this.ltbList.Location = new System.Drawing.Point(39, 111);
             this.ltbList.Name = "ltbList";
-            this.ltbList.Size = new System.Drawing.Size(265, 160);
+            this.ltbList.Size = new System.Drawing.Size(265, 148);
             this.ltbList.TabIndex = 7;
             // 
             // label3
@@ -128,11 +130,30 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "元";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(84, 85);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(100, 20);
+            this.comboBox1.TabIndex = 11;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(14, 88);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 12);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "计算方式：";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(351, 366);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.labTotalPrice);
             this.Controls.Add(this.label3);
@@ -145,6 +166,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,6 +184,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label labTotalPrice;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label4;
     }
 }
 

@@ -20,7 +20,9 @@ namespace WindowsFormsApplication1
 
         private void btCaculate_Click(object sender, EventArgs e)
         {
-            double totalPrices = Convert.ToInt32(textPrice.Text) * Convert.ToInt32(textNumber.Text);
+            CashSuper cashSuper = CashFactory.CreateCashAccept(comboBox1.SelectedItem.ToString());
+
+            double totalPrices = cashSuper.acceptCash(Convert.ToDouble(textPrice.Text) * Convert.ToDouble(textNumber.Text));
             total += totalPrices;
             ltbList.Items.Add("单价：" + textPrice.Text + "  数量：" + textNumber.Text + "  合计：" + totalPrices);
             labTotalPrice.Text = total.ToString();
@@ -32,6 +34,12 @@ namespace WindowsFormsApplication1
             textPrice.Text = string.Empty;
             ltbList.Items.Clear();
             labTotalPrice.Text = string.Empty;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            comboBox1.Items.AddRange(new string[] { "正常收费", "打八折", "打七折", "打五折" });
+            comboBox1.SelectedIndex = 0;
         }
     }
 }

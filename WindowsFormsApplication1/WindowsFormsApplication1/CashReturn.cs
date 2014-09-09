@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApplication1
 {
-    class CashReturn:CashSuper
+    class CashReturn : CashSuper
     {
         private double moneyCondition;
         private double moneyReturn;
-        public CashReturn(string moneyConditon,string moneyReturn)
+        public CashReturn(string moneyConditon, string moneyReturn)
         {
             this.moneyCondition = double.Parse(moneyConditon);
             this.moneyReturn = double.Parse(moneyReturn);
@@ -18,7 +18,7 @@ namespace WindowsFormsApplication1
         public override double acceptCash(double money)
         {
             double result = money;
-            if(money>moneyCondition)
+            if (money > moneyCondition)
             {
                 result = money - Math.Floor(money / moneyCondition) * moneyReturn;
             }

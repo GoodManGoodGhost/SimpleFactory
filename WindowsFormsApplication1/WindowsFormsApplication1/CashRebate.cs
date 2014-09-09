@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApplication1
 {
-    class CashRebate:CashSuper
+    class CashRebate : CashSuper
     {
-        private double moneyRebate=1d;
+        private double moneyRebate = 1d;
         public override double acceptCash(double money)
         {
             return money * moneyRebate;
