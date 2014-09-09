@@ -20,9 +20,31 @@ namespace WindowsFormsApplication1
 
         private void btCaculate_Click(object sender, EventArgs e)
         {
-            CashSuper cashSuper = CashFactory.CreateCashAccept(comboBox1.SelectedItem.ToString());
+            double totalPrices = 0.0d;
+            CashContext cs = null;
+            //根据不同的收费策略创建不同的CashContext实例
+            switch (comboBox1.SelectedItem.ToString())
+            {
+                case "正常收费":
+                    cs = new CashContext(new CashNormal());
+                    break;
+                case "满300返100":
+                    cs = new CashContext(new CashReturn("300", "100"));
+                    break;
+                case "打八折":
+                    cs = new CashContext(new CashRebate("8"));
+                    break;
+                case "打七折":
+                    cs = new CashContext(new CashRebate("7"));
+                    break;
+                case "打五折":
+                    cs = new CashContext(new CashRebate("5"));
+                    break;
+            }
 
-            double totalPrices = cashSuper.acceptCash(Convert.ToDouble(textPrice.Text) * Convert.ToDouble(textNumber.Text));
+            //CashSuper cashSuper = CashFactory.CreateCashAccept(comboBox1.SelectedItem.ToString());
+            //double totalPrices = cashSuper.acceptCash(Convert.ToDouble(textPrice.Text) * Convert.ToDouble(textNumber.Text));
+            totalPrices = cs.GetResult(Convert.ToDouble(textPrice.Text) * Convert.ToDouble(textNumber.Text));
             total += totalPrices;
             ltbList.Items.Add("单价：" + textPrice.Text + "  数量：" + textNumber.Text + "  合计：" + totalPrices);
             labTotalPrice.Text = total.ToString();
