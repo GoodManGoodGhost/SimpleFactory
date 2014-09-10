@@ -11,6 +11,7 @@ namespace WindowsFormsApplication1
         CashSuper cs = null;
         public CashContext(string acceptStrategy)
         {
+            //所有收费模式均继承自CashSuper类，重写抽象方法：acceptCash
             switch (acceptStrategy)
             {
                 case "正常收费":

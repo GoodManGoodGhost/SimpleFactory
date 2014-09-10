@@ -21,7 +21,7 @@ namespace WindowsFormsApplication1
         private void btCaculate_Click(object sender, EventArgs e)
         {
             double totalPrices = 0.0d;
-            //根据不同的收费策略不同，创建不同的CashContext实例
+            //根据不同的 收费策略 不同，创建不同的CashContext实例
             CashContext cs = new CashContext(comboBox1.SelectedItem.ToString());            
             totalPrices = cs.GetResult(Convert.ToDouble(textPrice.Text) * Convert.ToDouble(textNumber.Text));
 

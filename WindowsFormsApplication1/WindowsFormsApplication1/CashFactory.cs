@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApplication1
 {
+    //该类在策略模式中没有使用
     class CashFactory
     {
         //现金收费工厂
